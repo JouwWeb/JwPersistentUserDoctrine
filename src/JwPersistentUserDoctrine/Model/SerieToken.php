@@ -8,6 +8,7 @@ use JwPersistentUser\Model\SerieTokenInterface;
 
 /**
  * @ORM\Entity
+ * @ORM\Table(name="userSerieToken")
  */
 class SerieToken implements SerieTokenInterface
 {

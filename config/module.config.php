@@ -12,4 +12,18 @@ return [
             'JwPersistentUserDoctrine\ObjectManager' => 'doctrine.entitymanager.orm_default'
         ],
     ],
+    'doctrine' => [
+        'driver' => [
+            'orm_default' => [
+                'drivers' => [
+                    'JwPersistentUserDoctrine' => 'user_annotation_driver'
+                ]
+            ],
+            'user_annotation_driver' => [
+                'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
+                'cache' => 'array',
+                'paths' => [__DIR__ . '/../src/JwPersistentUserDoctrine/Model']
+            ],
+        ]
+    ],
 ];

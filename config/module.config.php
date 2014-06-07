@@ -6,7 +6,7 @@ return [
     ],
     'service_manager' => [
         'factories' => [
-            'JwPersistentUser\Mapper' => 'JwPersistentUserDoctrine\Mapper\SerieTokenMapperFactory'
+            'JwPersistentUser\Mapper\SerieToken' => 'JwPersistentUserDoctrine\Mapper\SerieTokenMapperFactory'
         ],
         'aliases' => [
             'JwPersistentUserDoctrine\ObjectManager' => 'doctrine.entitymanager.orm_default'

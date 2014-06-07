@@ -1,0 +1,27 @@
+{
+    "name": "jouwweb/jw-persistent-user-doctrine",
+    "description": "Extends JwPersistentUser to use Doctrine to manage tokens.",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "zf2"
+    ],
+    "homepage": "https://github.com/JouwWeb/JwPersistentUserDoctrine",
+    "authors": [
+        {
+            "name": "Roel van Duijnhoven",
+            "email": "roel@jouwweb.nl"
+        }
+    ],
+    "require": {
+        "jouwweb/jw-persistent-user": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "JwPersistentUserDoctrine": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    }
+}

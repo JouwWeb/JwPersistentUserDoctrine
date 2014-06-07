@@ -12,7 +12,7 @@ class SerieTokenMapperFactory implements FactoryInterface
         $mapper = new SerieTokenMapper;
 
         $mapper->setObjectManager($serviceLocator->get('JwPersistentUserDoctrine\ObjectManager'));
-        $mapper->setPersistentUserOptions($serviceLocator->get('JwPersistentUser\Options'));
+        $mapper->setPersistentUserOptions($serviceLocator->get('JwPersistentUser\ModuleOptions'));
 
         return $mapper;
     }

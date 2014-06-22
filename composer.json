@@ -14,7 +14,7 @@
         }
     ],
     "require": {
-        "jouwweb/jw-persistent-user": "0.1.*",
+        "jouwweb/jw-persistent-user": "0.2.*",
         "doctrine/doctrine-orm-module": "0.*"
     },
     "autoload": {

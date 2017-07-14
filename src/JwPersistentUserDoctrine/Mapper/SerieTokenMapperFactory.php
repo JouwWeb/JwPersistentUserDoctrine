@@ -2,18 +2,24 @@
 
 namespace JwPersistentUserDoctrine\Mapper;
 
-use Zend\ServiceManager\FactoryInterface,
-    Zend\ServiceManager\ServiceLocatorInterface;
+use Zend\ServiceManager\FactoryInterface;
+use Zend\ServiceManager\ServiceLocatorInterface;
+use Interop\Container\ContainerInterface;
 
 class SerieTokenMapperFactory implements FactoryInterface
 {
-    public function createService(ServiceLocatorInterface $serviceLocator)
+    public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $mapper = new SerieTokenMapper;
 
-        $mapper->setObjectManager($serviceLocator->get('JwPersistentUserDoctrine\ObjectManager'));
-        $mapper->setPersistentUserOptions($serviceLocator->get('JwPersistentUser\ModuleOptions'));
+        $mapper->setObjectManager($container->get('JwPersistentUserDoctrine\ObjectManager'));
+        $mapper->setPersistentUserOptions($container->get('JwPersistentUser\ModuleOptions'));
 
         return $mapper;
+    }
+
+    public function createService(ServiceLocatorInterface $serviceLocator)
+    {
+        return $this($serviceLocator->getServiceLocator(), 'JwPersistentUser\Mapper\SerieToken');
     }
 }

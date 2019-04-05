@@ -50,9 +50,9 @@ class SerieToken implements SerieTokenInterface
     protected $ipAddress;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      *
-     * @var string
+     * @var string|null
      */
     protected $userAgent;
 

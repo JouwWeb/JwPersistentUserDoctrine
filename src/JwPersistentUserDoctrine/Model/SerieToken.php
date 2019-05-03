@@ -42,20 +42,6 @@ class SerieToken implements SerieTokenInterface
      */
     protected $expiresAt;
 
-    /**
-     * @ORM\Column(type="string", length=45, nullable=true)
-     *
-     * @var string|null
-     */
-    protected $ipAddress;
-
-    /**
-     * @ORM\Column(type="text", nullable=true)
-     *
-     * @var string|null
-     */
-    protected $userAgent;
-
     public function getSerie()
     {
         return $this->serie;
@@ -94,25 +80,5 @@ class SerieToken implements SerieTokenInterface
     public function setExpiresAt($expiresAt)
     {
         $this->expiresAt = $expiresAt;
-    }
-
-    public function getIpAddress()
-    {
-        return $this->ipAddress;
-    }
-
-    public function setIpAddress($ipAddress)
-    {
-        $this->ipAddress = $ipAddress;
-    }
-
-    public function setUserAgent($userAgent)
-    {
-        $this->userAgent = $userAgent;
-    }
-
-    public function getUserAgent()
-    {
-        return $this->userAgent;
     }
 }

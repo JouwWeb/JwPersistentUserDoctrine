@@ -42,6 +42,13 @@ class SerieToken implements SerieTokenInterface
      */
     protected $expiresAt;
 
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     *
+     * @var \DateTime|null
+     */
+    protected $validUntil;
+
     public function getSerie()
     {
         return $this->serie;
@@ -80,5 +87,15 @@ class SerieToken implements SerieTokenInterface
     public function setExpiresAt($expiresAt)
     {
         $this->expiresAt = $expiresAt;
+    }
+
+    public function getValidUntil()
+    {
+        return $this->validUntil;
+    }
+
+    public function setValidUntil($validUntil)
+    {
+        $this->validUntil = $validUntil;
     }
 }

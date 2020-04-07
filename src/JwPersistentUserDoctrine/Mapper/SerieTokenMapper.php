@@ -48,6 +48,20 @@ class SerieTokenMapper implements SerieTokenMapperInterface
             ->getOneOrNullResult();
     }
 
+    public function findAllByUser(int $userId)
+    {
+        $class = $this->getPersistentUserOptions()->getSerieTokenEntityClass();
+
+        $dql = 'SELECT   s
+                FROM     ' . $class . ' s
+                WHERE    s.userId = :userId';
+
+        return $this->getObjectManager()
+            ->createQuery($dql)
+            ->setParameter('userId', $userId)
+            ->getResult();
+    }
+
     /**
      * @param ObjectManager $objectManager
      */
